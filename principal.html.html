@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Disciplinas</title>
+  <!-- Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-auth-compat.js"></script>
+  <script>
+    function traduzirErroFirebase(codigo) {
+      const erros = {
+        'auth/invalid-email': 'E-mail inválido.',
+        'auth/user-disabled': 'Usuário desativado.',
+        'auth/user-not-found': 'Usuário não encontrado.',
+        'auth/wrong-password': 'Senha incorreta.',
+        'auth/too-many-requests': 'Muitas tentativas. Tente novamente mais tarde.',
+        'auth/internal-error': 'Erro interno. Verifique os campos e tente novamente.'
+      };
+      return erros[codigo] || `Erro desconhecido (${codigo})`;
+    }
+  </script>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f0f2f5;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .menu {
+      background: linear-gradient(145deg, #1c1c1c, #000000);
+      color: #fff;
+      padding: 40px 30px;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+      width: 320px;
+      text-align: center;
+    }
+
+    .menu h3 {
+      font-size: 28px;
+      margin-bottom: 25px;
+      letter-spacing: 1px;
+    }
+
+    .disciplinas-container ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .disciplinas-container li {
+      background-color: #111;
+      border: 1px solid #444;
+      padding: 14px 20px;
+      border-radius: 8px;
+      margin-bottom: 12px;
+      font-size: 16px;
+      transition: all 0.3s ease;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .disciplinas-container li a {
+      color: white;
+      text-decoration: none;
+      flex: 1;
+    }
+
+    .disciplinas-container li:hover {
+      background-color: #1e1e1e;
+      transform: scale(1.03);
+      box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
+    }
+
+    .login-box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .login-box input {
+      padding: 10px;
+      margin: 8px 0;
+      width: 100%;
+      border: none;
+      border-radius: 6px;
+      outline: none;
+      font-size: 14px;
+    }
+
+    .login-box button {
+      margin-top: 12px;
+      padding: 10px 20px;
+      width: 100%;
+      border: none;
+      background-color: #00bfff;
+      color: #fff;
+      border-radius: 6px;
+      font-weight: bold;
+      font-size: 14px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .login-box button:hover {
+      background-color: #0099cc;
+    }
+
+    #disciplinas {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="menu">
+    <div id="login">
+      <h3>Login</h3>
+      <div class="login-box">
+        <p id="erro-login" style="color: #ff5c5c; margin-top: 8px; font-size: 14px; display: none;"></p>
+        <input type="email" id="usuario" placeholder="Email">
+        <input type="password" id="senha" placeholder="Senha">
+        <button onclick="fazerLogin()">Entrar</button>
+      </div>
+    </div>
+
+    <div id="disciplinas">
+      <h3>DISCIPLINAS</h3>
+      <div class="disciplinas-container">
+        <ul>
+          <li><a href="constitucional.html">Direito Constitucional</a></li>
+          <li><a href="Dir. Penal.html">Direito Penal</a></li>
+          <li><a href="Dir. Processual.html">Direito Processual Penal</a></li>
+          <li><a href="Dir. Especial.html">Direito Especial</a></li>
+        </ul>
+      </div>
+      <button onclick="sair()" style="margin-top: 20px; padding: 10px 20px; background-color: #00bfff; color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: bold;">Sair</button>
+    </div>
+  </div>
+
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyCh6SuXam5_VlDUJnDHBdn578aXi-p2vnI",
+      authDomain: "concursos-b1e9c.firebaseapp.com",
+      projectId: "concursos-b1e9c",
+      storageBucket: "concursos-b1e9c.appspot.com",
+      messagingSenderId: "726943998347",
+      appId: "1:726943998347:web:db243f0b7403a9cbeb8f8e"
+    };
+
+    firebase.initializeApp(firebaseConfig);
+
+    function fazerLogin() {
+      const email = document.getElementById('usuario').value;
+      const senha = document.getElementById('senha').value;
+
+      firebase.auth().signInWithEmailAndPassword(email, senha)
+        .then((userCredential) => {
+          document.getElementById('login').style.display = 'none';
+          document.getElementById('disciplinas').style.display = 'block';
+          const erroMsg = document.getElementById('erro-login');
+          erroMsg.innerText = '';
+          erroMsg.style.display = 'none';
+        })
+        .catch((error) => {
+          const erroTraduzido = traduzirErroFirebase(error.code);
+          const erroMsg = document.getElementById('erro-login');
+          erroMsg.innerText = erroTraduzido;
+          erroMsg.style.display = 'block';
+        });
+    }
+
+    function sair() {
+      firebase.auth().signOut().then(() => {
+        document.getElementById('disciplinas').style.display = 'none';
+        document.getElementById('login').style.display = 'block';
+      });
+    }
+  </script>
+</body>
+</html>

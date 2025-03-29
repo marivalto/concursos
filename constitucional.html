@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Direito Constitucional - Aula 01</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #ffffff;
+      display: flex;
+    }
+
+    .sidebar {
+  width: 200px;
+  min-width: 200px;
+  max-width: 200px;
+  background-color: #000;
+  color: #fff;
+  height: 100vh;
+  overflow-y: auto;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+    .sidebar h2 {
+      font-size: 20px;
+      margin: 0 0 15px;
+      text-align: center;
+    }
+
+    .aula-link {
+      padding: 10px 12px;
+      margin-bottom: 6px;
+      background-color: #111;
+      border: 1px solid #333;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: 0.3s;
+      text-align: center;
+    }
+
+    .aula-link:hover {
+      background-color: #333;
+    }
+
+    .aula-divider {
+      border-top: 1px solid #444;
+      margin: 8px 0;
+    }
+
+    .main-content {
+  flex: 1;
+  padding: 40px 20px 40px 0;
+  box-sizing: border-box;
+  background-color: #ffffff;
+  min-width: 0;
+}
+
+    .main-content h1 {
+      margin-top: 0;
+      text-align: center;
+      font-size: 26px;
+    }
+
+    audio {
+      display: block;
+      margin: 30px auto;
+      width: 100%;
+      max-width: 700px;
+    }
+
+    img {
+  display: block;
+  margin: 20px auto;
+  width: 100%;
+  max-width: 600px;
+  border-radius: 8px;
+  border: 4px solid #000;
+}
+
+    .divider {
+      height: 2px;
+      background-color: #ccc;
+      width: 80%;
+      margin: 30px auto;
+    }
+
+    .back-button {
+      display: block;
+      margin: 40px auto 0 auto;
+      padding: 10px 20px;
+      background-color: #00bfff;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      text-decoration: none;
+      text-align: center;
+    }
+
+    .back-button:hover {
+      background-color: #0099cc;
+    }
+
+    .aula-link.active {
+      background-color: #00bfff !important;
+      border-color: #00bfff;
+    }
+
+    [class^="imagem-aula"] {
+  display: none;
+  height: 100vh;
+  overflow-y: auto;
+  width: 100%;
+  margin: auto;
+}
+
+[class^="imagem-aula"] img {
+  display: block;
+  margin: 20px auto;
+  width: 100%;
+  max-width: 600px;
+  border-radius: 8px;
+  border: 4px solid #000;
+}
+  </style>
+</head>
+<body>
+  <div class="sidebar">
+    <h2>Direito Constitucional</h2>
+    <div class="aulas-container">
+      <div class="aula-link"><a href="#" style="color:white; text-decoration:none;">Aula 00 – Princípios Fundamentais</a></div>
+      <div class="aula-divider"></div>
+      <div class="aula-link"><a href="#" style="color:white; text-decoration:none;">Aula 01 – Princípios Constitucionais</a></div>
+      <div class="aula-divider"></div>
+      <div class="aula-link"><a href="#" style="color:white; text-decoration:none;">Aula 02 – Teoria dos Direitos e Garantias Fundamentais</a></div>
+      <div class="aula-divider"></div>
+      <div class="aula-link"><a href="#" style="color:white; text-decoration:none;">Aula 03 – Direitos e Deveres Individuais e Coletivos Art. 5º</a></div>
+      <div class="aula-divider"></div>
+      <div class="aula-link"><a href="#" style="color:white; text-decoration:none;">Aula 04 – Remédios Constitucionais Art. 5º</a></div>
+      <div class="aula-divider"></div>
+      <div class="aula-link"><a href="#" style="color:white; text-decoration:none;">Aula 05 – Direitos Sociais Art. 6 ao Art. 11</a></div>
+      <div class="aula-divider"></div>
+      <div class="aula-link"><a href="#" style="color:white; text-decoration:none;">Aula 06 – Nacionalidade Art. 12 ao Art. 13</a></div>
+      <div class="aula-divider"></div>
+      <div class="aula-link"><a href="#" style="color:white; text-decoration:none;">Aula 07 – Direitos Políticos Art. 14 ao Art. 16</a></div>
+      <div class="aula-divider"></div>
+      <div class="aula-link"><a href="#" style="color:white; text-decoration:none;">Aula 08 – Partidos Políticos Art. 17</a></div>
+      <div class="aula-divider"></div>
+      <div class="aula-link"><a href="#" style="color:white; text-decoration:none;">Aula 09 – Organização Política Art. 18 ao Art. 19</a></div>
+      <div class="aula-divider"></div>
+      <div class="aula-link"><a href="#" style="color:white; text-decoration:none;">Aula 10 – Organização Político-Administrativa Art. 18º e 19º</a></div>
+      <div class="aula-divider"></div>
+      <div class="aula-link"><a href="#" style="color:white; text-decoration:none;">Aula 11 – Bens e Competências dos Entes Art. 20 ao Art. 24, 26, 30</a></div>
+      <div class="aula-divider"></div>
+      <div class="aula-link"><a href="#" style="color:white; text-decoration:none;">Aula 12 – Da Intervenção Art. 34º ao Art. 36º</a></div>
+      <div class="aula-divider"></div>
+      <div class="aula-link"><a href="#" style="color:white; text-decoration:none;">Aula 13 – Estado de Defesa e Estado de Sítio Art. 136º ao 139º</a></div>
+      <div class="aula-divider"></div>
+      <div class="aula-link"><a href="#" style="color:white; text-decoration:none;">Aula 14 – Da Administração Pública Art. 37º ao Art. 43º</a></div>
+      <div class="aula-divider"></div>
+      <div class="aula-link"><a href="#" style="color:white; text-decoration:none;">Aula 15 – Do Poder Executivo Art. 76º ao Art. 91º</a></div>
+      <div class="aula-divider"></div>
+      <div class="aula-link"><a href="#" style="color:white; text-decoration:none;">Aula 16 – Poder Legislativo Art. 44 ao Art. 75</a></div>
+      <div class="aula-divider"></div>
+      <div class="aula-link"><a href="#" style="color:white; text-decoration:none;">Aula 17 – Poder Judiciário Art. 92 ao Art. 126</a></div>
+      <div class="aula-divider"></div>
+      <div class="aula-link"><a href="#" style="color:white; text-decoration:none;">Aula 18 – Segurança Pública Art. 144º</a></div>
+      <div class="aula-divider"></div>
+      <div class="aula-link"><a href="#" style="color:white; text-decoration:none;">Aula 19 – Funções Essenciais à Justiça Art. 127 ao Art. 135</a></div>
+    </div>
+  </div>
+  <div class="main-content">
+    <div class="img-controls" id="imgControls" style="display: none; position: fixed; bottom: 20px; right: 20px; z-index: 9999; display: flex; flex-direction: column; gap: 10px;">
+    <button onclick="resizeImages(0.9)" style="padding: 10px 18px; font-size: 16px; cursor: pointer; background-color: #000; color: white; border: 1px solid black; border-radius: 20px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); transition: background-color 0.3s ease, transform 0.2s ease;">➖</button>
+    <button onclick="resizeImages(1.1)" style="padding: 10px 18px; font-size: 16px; cursor: pointer; background-color: #000; color: white; border: 1px solid black; border-radius: 20px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); transition: background-color 0.3s ease, transform 0.2s ease;">➕</button>
+    
+  </div>
+</div>
+
+  <!-- ################################----------Aula 00---------- ########################################################### -->
+  <div class="imagem-aula00" id="imagemAula00">
+    <div id="audioToggle00" style="position: fixed; top: 10px; left: 210px; z-index: 9999; background: #111; padding: 6px 10px; border-radius: 6px; color: white; cursor: pointer; font-size: 14px;">🎧 Áudios explicativos</div>
+<div id="audioList00" style="display: none; position: fixed; top: 50px; left: 270px; z-index: 9999; background: #222; padding: 10px; border-radius: 6px; box-shadow: 0 0 8px rgba(0,0,0,0.3);">
+ 
+  <p style="color: #fff; margin: 6px 0 2px;">Aula 00 - Parte 01</p>
+  <audio controls style="display: block; width: 240px; margin-bottom: 10px;">
+    <source src="file:///C:/Users/Almeida/Desktop/site/Constitucional/Aula 00/audio-explicacao.mp3" type="audio/mpeg">
+    Seu navegador não suporta áudio HTML.
+  </audio>
+  
+  <p style="color: #fff; margin: 6px 0 2px;">Aula 00 - Parte 02</p>
+  <audio controls style="display: block; width: 240px;">
+    <source src="file:///C:/Users/Almeida/Desktop/site/Constitucional/Aula 00/audio-explicacao-2.mp3" type="audio/mpeg">
+    Seu navegador não suporta áudio HTML.
+  </audio>
+</div>
+    <div class="divider"></div>
+    <img src="file:///C:/Users/Almeida/Desktop/site/Constitucional/Aula 00/foto_aula00.jpg" alt="Imagem Aula 00">
+</div>
+
+<!-- ################################----------Aula 01---------- ########################################################### -->
+  <div class="imagem-aula01" id="imagemAula01">
+    <div id="audioToggle01" style="position: fixed; top: 10px; left: 210px; z-index: 9999; background: #111; padding: 6px 10px; border-radius: 6px; color: white; cursor: pointer; font-size: 14px;">🎧 Áudios explicativos</div>
+  <div id="audioList01" style="display: none; position: fixed; top: 50px; left: 270px; z-index: 9999; background: #222; padding: 10px; border-radius: 6px; box-shadow: 0 0 8px rgba(0,0,0,0.3);">
+    
+    <p style="color: #fff; margin: 6px 0 2px;">Aula 01 - Parte 01</p>
+    <audio controls style="display: block; width: 240px; margin-bottom: 10px;">
+      <source src="file:///C:/Users/Almeida/Desktop/site/Constitucional/Aula 01/audio-explicacao.mp3" type="audio/mpeg">
+      Seu navegador não suporta áudio HTML.
+    </audio>
+    
+    <p style="color: #fff; margin: 6px 0 2px;">Aula 01 - Parte 01</p>
+    <audio controls style="display: block; width: 240px;">
+      <source src="file:///C:/Users/Almeida/Desktop/site/Constitucional/Aula 01/audio-explicacao-2.mp3" type="audio/mpeg">
+      Seu navegador não suporta áudio HTML.
+    </audio>
+  </div>
+  <div class="divider"></div>
+  <img src="file:///C:/Users/Almeida/Desktop/site/Constitucional/Aula 01/foto_aula01.jpg" alt="Imagem Aula 01">
+</div>
+
+  <!-- ################################----------Aula 02---------- ########################################################### -->
+  <div class="imagem-aula02" id="imagemAula02">
+    <div id="audioToggle02" style="position: fixed; top: 10px; left: 210px; z-index: 9999; background: #111; padding: 6px 10px; border-radius: 6px; color: white; cursor: pointer; font-size: 14px;">🎧 Áudios explicativos</div>
+  <div id="audioList02" style="display: none; position: fixed; top: 50px; left: 270px; z-index: 9999; background: #222; padding: 10px; border-radius: 6px; box-shadow: 0 0 8px rgba(0,0,0,0.3);">
+    
+    <p style="color: #fff; margin: 6px 0 2px;">Aula 02 - Parte 01</p>
+    <audio controls style="display: block; width: 240px; margin-bottom: 10px;">
+      <source src="file:///C:/Users/Almeida/Desktop/site/Constitucional/Aula 02/audio-explicacao.mp3" type="audio/mpeg">
+      Seu navegador não suporta áudio HTML.
+    </audio>
+    
+    <p style="color: #fff; margin: 6px 0 2px;">Aula 02 - Parte 01</p>
+    <audio controls style="display: block; width: 240px;">
+      <source src="file:///C:/Users/Almeida/Desktop/site/Constitucional/Aula 02/audio-explicacao-2.mp3" type="audio/mpeg">
+      Seu navegador não suporta áudio HTML.
+    </audio>
+  </div>
+  <div class="divider"></div>
+  <img src="file:///C:/Users/Almeida/Desktop/site/Constitucional/Aula 02/foto_aula02.jpg" alt="Imagem Aula 02">
+</div>
+
+  <!-- ################################----------Aula 03---------- ########################################################### -->
+  <div class="imagem-aula03" id="imagemAula03">
+    <div id="audioToggle03" style="position: fixed; top: 10px; left: 210px; z-index: 9999; background: #111; padding: 6px 10px; border-radius: 6px; color: white; cursor: pointer; font-size: 14px;">🎧 Áudios explicativos</div>
+  <div id="audioList03" style="display: none; position: fixed; top: 50px; left: 270px; z-index: 9999; background: #222; padding: 10px; border-radius: 6px; box-shadow: 0 0 8px rgba(0,0,0,0.3);">
+    
+    <p style="color: #fff; margin: 6px 0 2px;">Aula 00 - Parte 01</p>
+    <audio controls style="display: block; width: 240px; margin-bottom: 10px;">
+      <source src="file:///C:/Users/Almeida/Desktop/site/Constitucional/Aula 03/audio-explicacao.mp3" type="audio/mpeg">
+      Seu navegador não suporta áudio HTML.
+    </audio>
+    
+    <p style="color: #fff; margin: 6px 0 2px;">Aula 00 - Parte 01</p>
+    <audio controls style="display: block; width: 240px;">
+      <source src="file:///C:/Users/Almeida/Desktop/site/Constitucional/Aula 03/audio-explicacao-2.mp3" type="audio/mpeg">
+      Seu navegador não suporta áudio HTML.
+    </audio>
+  </div>
+  <div class="divider"></div>
+  <img src="file:///C:/Users/Almeida/Desktop/site/Constitucional/Aula 03/foto_aula03.jpg" alt="Imagem Aula 03">
+</div>
+
+  <!-- ################################----------Aula 04---------- ########################################################### -->
+  <div class="imagem-aula04" id="imagemAula04">
+    <div id="audioToggle04" style="position: fixed; top: 10px; left: 210px; z-index: 9999; background: #111; padding: 6px 10px; border-radius: 6px; color: white; cursor: pointer; font-size: 14px;">🎧 Áudios explicativos</div>
+  <div id="audioList04" style="display: none; position: fixed; top: 50px; left: 270px; z-index: 9999; background: #222; padding: 10px; border-radius: 6px; box-shadow: 0 0 8px rgba(0,0,0,0.3);">
+    
+    <p style="color: #fff; margin: 6px 0 2px;">Aula 00 - Parte 01</p>
+    <audio controls style="display: block; width: 240px; margin-bottom: 10px;">
+      <source src="file:///C:/Users/Almeida/Desktop/site/Constitucional/Aula 04/audio-explicacao.mp3" type="audio/mpeg">
+      Seu navegador não suporta áudio HTML.
+    </audio>
+    
+    <p style="color: #fff; margin: 6px 0 2px;">Aula 00 - Parte 01</p>
+    <audio controls style="display: block; width: 240px;">
+      <source src="file:///C:/Users/Almeida/Desktop/site/Constitucional/Aula 04/audio-explicacao-2.mp3" type="audio/mpeg">
+      Seu navegador não suporta áudio HTML.
+    </audio>
+  </div>
+  <div class="divider"></div>
+  <img src="file:///C:/Users/Almeida/Desktop/site/Constitucional/Aula 04/foto_aula04.jpg" alt="Imagem Aula 04">
+</div>
+
+  <!-- ################################----------Aula 05---------- ########################################################### -->
+  <div class="imagem-aula05" id="imagemAula05">
+    <div id="audioToggle05" style="position: fixed; top: 10px; left: 210px; z-index: 9999; background: #111; padding: 6px 10px; border-radius: 6px; color: white; cursor: pointer; font-size: 14px;">🎧 Áudios explicativos</div>
+  <div id="audioList05" style="display: none; position: fixed; top: 50px; left: 270px; z-index: 9999; background: #222; padding: 10px; border-radius: 6px; box-shadow: 0 0 8px rgba(0,0,0,0.3);">
+   
+    <p style="color: #fff; margin: 6px 0 2px;">Aula 00 - Parte 01</p>
+    <audio controls style="display: block; width: 240px; margin-bottom: 10px;">
+      <source src="file:///C:/Users/Almeida/Desktop/site/Constitucional/Aula 05/audio-explicacao.mp3" type="audio/mpeg">
+      Seu navegador não suporta áudio HTML.
+    </audio>
+   
+    <p style="color: #fff; margin: 6px 0 2px;">Aula 00 - Parte 01</p>
+    <audio controls style="display: block; width: 240px;">
+      <source src="file:///C:/Users/Almeida/Desktop/site/Constitucional/Aula 05/audio-explicacao-2.mp3" type="audio/mpeg">
+      Seu navegador não suporta áudio HTML.
+    </audio>
+  </div>
+  <div class="divider"></div>
+  <img src="file:///C:/Users/Almeida/Desktop/site/Constitucional/Aula 05/foto_aula05.jpg" alt="Imagem Aula 05">
+</div>
+
+  <!-- ################################----------Aula 06---------- ########################################################### -->
+  <div class="imagem-aula06" id="imagemAula06">
+    <div id="audioToggle06" style="position: fixed; top: 10px; left: 210px; z-index: 9999; background: #111; padding: 6px 10px; border-radius: 6px; color: white; cursor: pointer; font-size: 14px;">🎧 Áudios explicativos</div>
+  <div id="audioList06" style="display: none; position: fixed; top: 50px; left: 270px; z-index: 9999; background: #222; padding: 10px; border-radius: 6px; box-shadow: 0 0 8px rgba(0,0,0,0.3);">
+   
+    <p style="color: #fff; margin: 6px 0 2px;">Aula 00 - Parte 01</p>
+    <audio controls style="display: block; width: 240px; margin-bottom: 10px;">
+      <source src="file:///C:/Users/Almeida/Desktop/site/Constitucional/Aula 06/audio-explicacao.mp3" type="audio/mpeg">
+      Seu navegador não suporta áudio HTML.
+    </audio>
+    
+    <p style="color: #fff; margin: 6px 0 2px;">Aula 00 - Parte 01</p>
+    <audio controls style="display: block; width: 240px;">
+      <source src="file:///C:/Users/Almeida/Desktop/site/Constitucional/Aula 06/audio-explicacao-2.mp3" type="audio/mpeg">
+      Seu navegador não suporta áudio HTML.
+    </audio>
+  </div>
+  <div class="divider"></div>
+  <img src="file:///C:/Users/Almeida/Desktop/site/Constitucional/Aula 06/foto_aula06.jpg" alt="Imagem Aula 06">
+</div>
+
+  <!-- ################################----------Aula 07---------- ########################################################### -->
+  <div class="imagem-aula07" id="imagemAula07">
+    <div id="audioToggle07" style="position: fixed; top: 10px; left: 210px; z-index: 9999; background: #111; padding: 6px 10px; border-radius: 6px; color: white; cursor: pointer; font-size: 14px;">🎧 Áudios explicativos</div>
+  <div id="audioList07" style="display: none; position: fixed; top: 50px; left: 270px; z-index: 9999; background: #222; padding: 10px; border-radius: 6px; box-shadow: 0 0 8px rgba(0,0,0,0.3);">
+    
+    <p style="color: #fff; margin: 6px 0 2px;">Aula 00 - Parte 01</p>
+    <audio controls style="display: block; width: 240px; margin-bottom: 10px;">
+      <source src="file:///C:/Users/Almeida/Desktop/site/Constitucional/Aula 07/audio-explicacao.mp3" type="audio/mpeg">
+      Seu navegador não suporta áudio HTML.
+    </audio>
+    
+    <p style="color: #fff; margin: 6px 0 2px;">Aula 00 - Parte 01</p>
+    <audio controls style="display: block; width: 240px;">
+      <source src="file:///C:/Users/Almeida/Desktop/site/Constitucional/Aula 07/audio-explicacao-2.mp3" type="audio/mpeg">
+      Seu navegador não suporta áudio HTML.
+    </audio>
+  </div>
+  <div class="divider"></div>
+  <img src="file:///C:/Users/Almeida/Desktop/site/Constitucional/Aula 07/foto_aula07.jpg" alt="Imagem Aula 07">
+</div>
+
+  <!-- ################################----------Aula 08---------- ########################################################### -->
+  <div class="imagem-aula08" id="imagemAula08">
+    <div id="audioToggle08" style="position: fixed; top: 10px; left: 210px; z-index: 9999; background: #111; padding: 6px 10px; border-radius: 6px; color: white; cursor: pointer; font-size: 14px;">🎧 Áudios explicativos</div>
+  <div id="audioList08" style="display: none; position: fixed; top: 50px; left: 270px; z-index: 9999; background: #222; padding: 10px; border-radius: 6px; box-shadow: 0 0 8px rgba(0,0,0,0.3);">
+   
+    <p style="color: #fff; margin: 6px 0 2px;">Aula 00 - Parte 01</p>
+    <audio controls style="display: block; width: 240px; margin-bottom: 10px;">
+      <source src="file:///C:/Users/Almeida/Desktop/site/Constitucional/Aula 08/audio-explicacao.mp3" type="audio/mpeg">
+      Seu navegador não suporta áudio HTML.
+    </audio>
+   
+    <p style="color: #fff; margin: 6px 0 2px;">Aula 00 - Parte 01</p>
+    <audio controls style="display: block; width: 240px;">
+      <source src="file:///C:/Users/Almeida/Desktop/site/Constitucional/Aula 08/audio-explicacao-2.mp3" type="audio/mpeg">
+      Seu navegador não suporta áudio HTML.
+    </audio>
+  </div>
+  <div class="divider"></div>
+  <img src="file:///C:/Users/Almeida/Desktop/site/Constitucional/Aula 08/foto_aula08.jpg" alt="Imagem Aula 08">
+</div>
+
+  <!-- ################################----------Aula 09---------- ########################################################### -->
+  <div class="imagem-aula09" id="imagemAula09">
+    <div id="audioToggle09" style="position: fixed; top: 10px; left: 210px; z-index: 9999; background: #111; padding: 6px 10px; border-radius: 6px; color: white; cursor: pointer; font-size: 14px;">🎧 Áudios explicativos</div>
+  <div id="audioList09" style="display: none; position: fixed; top: 50px; left: 270px; z-index: 9999; background: #222; padding: 10px; border-radius: 6px; box-shadow: 0 0 8px rgba(0,0,0,0.3);">
+    
+    <p style="color: #fff; margin: 6px 0 2px;">Aula 00 - Parte 01</p>
+    <audio controls style="display: block; width: 240px; margin-bottom: 10px;">
+      <source src="file:///C:/Users/Almeida/Desktop/site/Constitucional/Aula 09/audio-explicacao.mp3" type="audio/mpeg">
+      Seu navegador não suporta áudio HTML.
+    </audio>
+   
+    <p style="color: #fff; margin: 6px 0 2px;">Aula 00 - Parte 01</p>
+    <audio controls style="display: block; width: 240px;">
+      <source src="file:///C:/Users/Almeida/Desktop/site/Constitucional/Aula 09/audio-explicacao-2.mp3" type="audio/mpeg">
+      Seu navegador não suporta áudio HTML.
+    </audio>
+  </div>
+  <div class="divider"></div>
+  <img src="file:///C:/Users/Almeida/Desktop/site/Constitucional/Aula 09/foto_aula09.jpg" alt="Imagem Aula 09">
+</div>
+
+  <!-- ################################----------Aula 10---------- ########################################################### -->
+  <div class="imagem-aula10" id="imagemAula10">
+    <div id="audioToggle10" style="position: fixed; top: 10px; left: 210px; z-index: 9999; background: #111; padding: 6px 10px; border-radius: 6px; color: white; cursor: pointer; font-size: 14px;">🎧 Áudios explicativos</div>
+  <div id="audioList10" style="display: none; position: fixed; top: 50px; left: 270px; z-index: 9999; background: #222; padding: 10px; border-radius: 6px; box-shadow: 0 0 8px rgba(0,0,0,0.3);">
+    
+    <p style="color: #fff; margin: 6px 0 2px;">Aula 00 - Parte 01</p>
+    <audio controls style="display: block; width: 240px; margin-bottom: 10px;">
+      <source src="file:///C:/Users/Almeida/Desktop/site/Constitucional/Aula 10/audio-explicacao.mp3" type="audio/mpeg">
+      Seu navegador não suporta áudio HTML.
+    </audio>
+   
+    <p style="color: #fff; margin: 6px 0 2px;">Aula 00 - Parte 01</p>
+    <audio controls style="display: block; width: 240px;">
+      <source src="file:///C:/Users/Almeida/Desktop/site/Constitucional/Aula 10/audio-explicacao-2.mp3" type="audio/mpeg">
+      Seu navegador não suporta áudio HTML.
+    </audio>
+  </div>
+  <div class="divider"></div>
+  <img src="file:///C:/Users/Almeida/Desktop/site/Constitucional/Aula 10/foto_aula10.jpg" alt="Imagem Aula 10">
+</div>
+
+  <!-- ################################----------Aula 11---------- ########################################################### -->
+  <div class="imagem-aula11" id="imagemAula11">
+    <div id="audioToggle11" style="position: fixed; top: 10px; left: 210px; z-index: 9999; background: #111; padding: 6px 10px; border-radius: 6px; color: white; cursor: pointer; font-size: 14px;">🎧 Áudios explicativos</div>
+  <div id="audioList11" style="display: none; position: fixed; top: 50px; left: 270px; z-index: 9999; background: #222; padding: 10px; border-radius: 6px; box-shadow: 0 0 8px rgba(0,0,0,0.3);">
+   
+    <p style="color: #fff; margin: 6px 0 2px;">Aula 00 - Parte 01</p>
+    <audio controls style="display: block; width: 240px; margin-bottom: 10px;">
+      <source src="file:///C:/Users/Almeida/Desktop/site/Constitucional/Aula 11/audio-explicacao.mp3" type="audio/mpeg">
+      Seu navegador não suporta áudio HTML.
+    </audio>
+    
+    <p style="color: #fff; margin: 6px 0 2px;">Aula 00 - Parte 01</p>
+    <audio controls style="display: block; width: 240px;">
+      <source src="file:///C:/Users/Almeida/Desktop/site/Constitucional/Aula 11/audio-explicacao-2.mp3" type="audio/mpeg">
+      Seu navegador não suporta áudio HTML.
+    </audio>
+  </div>
+  <div class="divider"></div>
+  <img src="file:///C:/Users/Almeida/Desktop/site/Constitucional/Aula 11/foto_aula11.jpg" alt="Imagem Aula 11">
+</div>
+
+  <!-- ################################----------Aula 12---------- ########################################################### -->
+  <div class="imagem-aula12" id="imagemAula12">
+    <div id="audioToggle12" style="position: fixed; top: 10px; left: 210px; z-index: 9999; background: #111; padding: 6px 10px; border-radius: 6px; color: white; cursor: pointer; font-size: 14px;">🎧 Áudios explicativos</div>
+  <div id="audioList12" style="display: none; position: fixed; top: 50px; left: 270px; z-index: 9999; background: #222; padding: 10px; border-radius: 6px; box-shadow: 0 0 8px rgba(0,0,0,0.3);">
+   
+    <p style="color: #fff; margin: 6px 0 2px;">Aula 00 - Parte 01</p>
+    <audio controls style="display: block; width: 240px; margin-bottom: 10px;">
+      <source src="file:///C:/Users/Almeida/Desktop/site/Constitucional/Aula 12/audio-explicacao.mp3" type="audio/mpeg">
+      Seu navegador não suporta áudio HTML.
+    </audio>
+   
+    <p style="color: #fff; margin: 6px 0 2px;">Aula 00 - Parte 01</p>
+    <audio controls style="display: block; width: 240px;">
+      <source src="file:///C:/Users/Almeida/Desktop/site/Constitucional/Aula 12/audio-explicacao-2.mp3" type="audio/mpeg">
+      Seu navegador não suporta áudio HTML.
+    </audio>
+  </div>
+  <div class="divider"></div>
+  <img src="file:///C:/Users/Almeida/Desktop/site/Constitucional/Aula 12/foto_aula12.jpg" alt="Imagem Aula 12">
+</div>
+
+  <!-- ################################----------Aula 13---------- ########################################################### -->
+  <div class="imagem-aula13" id="imagemAula13">
+    <div id="audioToggle13" style="position: fixed; top: 10px; left: 210px; z-index: 9999; background: #111; padding: 6px 10px; border-radius: 6px; color: white; cursor: pointer; font-size: 14px;">🎧 Áudios explicativos</div>
+  <div id="audioList13" style="display: none; position: fixed; top: 50px; left: 270px; z-index: 9999; background: #222; padding: 10px; border-radius: 6px; box-shadow: 0 0 8px rgba(0,0,0,0.3);">
+    
+    <p style="color: #fff; margin: 6px 0 2px;">Aula 00 - Parte 01</p>
+    <audio controls style="display: block; width: 240px; margin-bottom: 10px;">
+      <source src="file:///C:/Users/Almeida/Desktop/site/Constitucional/Aula 13/audio-explicacao.mp3" type="audio/mpeg">
+      Seu navegador não suporta áudio HTML.
+    </audio>
+    
+    <p style="color: #fff; margin: 6px 0 2px;">Aula 00 - Parte 01</p>
+    <audio controls style="display: block; width: 240px;">
+      <source src="file:///C:/Users/Almeida/Desktop/site/Constitucional/Aula 13/audio-explicacao-2.mp3" type="audio/mpeg">
+      Seu navegador não suporta áudio HTML.
+    </audio>
+  </div>
+  <div class="divider"></div>
+  <img src="file:///C:/Users/Almeida/Desktop/site/Constitucional/Aula 13/foto_aula13.jpg" alt="Imagem Aula 13">
+</div>
+
+  <!-- ################################----------Aula 14---------- ########################################################### -->
+  <div class="imagem-aula14" id="imagemAula14">
+    <div id="audioToggle14" style="position: fixed; top: 10px; left: 210px; z-index: 9999; background: #111; padding: 6px 10px; border-radius: 6px; color: white; cursor: pointer; font-size: 14px;">🎧 Áudios explicativos</div>
+  <div id="audioList14" style="display: none; position: fixed; top: 50px; left: 270px; z-index: 9999; background: #222; padding: 10px; border-radius: 6px; box-shadow: 0 0 8px rgba(0,0,0,0.3);">
+    
+    <p style="color: #fff; margin: 6px 0 2px;">Aula 00 - Parte 01</p>
+    <audio controls style="display: block; width: 240px; margin-bottom: 10px;">
+      <source src="file:///C:/Users/Almeida/Desktop/site/Constitucional/Aula 14/audio-explicacao.mp3" type="audio/mpeg">
+      Seu navegador não suporta áudio HTML.
+    </audio>
+    
+    <p style="color: #fff; margin: 6px 0 2px;">Aula 00 - Parte 01</p>
+    <audio controls style="display: block; width: 240px;">
+      <source src="file:///C:/Users/Almeida/Desktop/site/Constitucional/Aula 14/audio-explicacao-2.mp3" type="audio/mpeg">
+      Seu navegador não suporta áudio HTML.
+    </audio>
+  </div>
+  <div class="divider"></div>
+  <img src="file:///C:/Users/Almeida/Desktop/site/Constitucional/Aula 14/foto_aula14.jpg" alt="Imagem Aula 14">
+</div>
+
+  <!-- ################################----------Aula 15---------- ########################################################### -->
+  <div class="imagem-aula15" id="imagemAula15">
+    <div id="audioToggle15" style="position: fixed; top: 10px; left: 210px; z-index: 9999; background: #111; padding: 6px 10px; border-radius: 6px; color: white; cursor: pointer; font-size: 14px;">🎧 Áudios explicativos</div>
+  <div id="audioList15" style="display: none; position: fixed; top: 50px; left: 270px; z-index: 9999; background: #222; padding: 10px; border-radius: 6px; box-shadow: 0 0 8px rgba(0,0,0,0.3);">
+   
+    <p style="color: #fff; margin: 6px 0 2px;">Aula 00 - Parte 01</p>
+    <audio controls style="display: block; width: 240px; margin-bottom: 10px;">
+      <source src="file:///C:/Users/Almeida/Desktop/site/Constitucional/Aula 15/audio-explicacao.mp3" type="audio/mpeg">
+      Seu navegador não suporta áudio HTML.
+    </audio>
+    
+    <p style="color: #fff; margin: 6px 0 2px;">Aula 00 - Parte 01</p>
+    <audio controls style="display: block; width: 240px;">
+      <source src="file:///C:/Users/Almeida/Desktop/site/Constitucional/Aula 15/audio-explicacao-2.mp3" type="audio/mpeg">
+      Seu navegador não suporta áudio HTML.
+    </audio>
+  </div>
+  <div class="divider"></div>
+  <img src="file:///C:/Users/Almeida/Desktop/site/Constitucional/Aula 15/foto_aula15.jpg" alt="Imagem Aula 15">
+</div>
+
+  <!-- ################################----------Aula 16---------- ########################################################### -->
+  <div class="imagem-aula16" id="imagemAula16">
+    <div id="audioToggle16" style="position: fixed; top: 10px; left: 210px; z-index: 9999; background: #111; padding: 6px 10px; border-radius: 6px; color: white; cursor: pointer; font-size: 14px;">🎧 Áudios explicativos</div>
+  <div id="audioList16" style="display: none; position: fixed; top: 50px; left: 270px; z-index: 9999; background: #222; padding: 10px; border-radius: 6px; box-shadow: 0 0 8px rgba(0,0,0,0.3);">
+    
+    <p style="color: #fff; margin: 6px 0 2px;">Aula 00 - Parte 01</p>
+    <audio controls style="display: block; width: 240px; margin-bottom: 10px;">
+      <source src="file:///C:/Users/Almeida/Desktop/site/Constitucional/Aula 16/audio-explicacao.mp3" type="audio/mpeg">
+      Seu navegador não suporta áudio HTML.
+    </audio>
+    
+    <p style="color: #fff; margin: 6px 0 2px;">Aula 00 - Parte 01</p>
+    <audio controls style="display: block; width: 240px;">
+      <source src="file:///C:/Users/Almeida/Desktop/site/Constitucional/Aula 16/audio-explicacao-2.mp3" type="audio/mpeg">
+      Seu navegador não suporta áudio HTML.
+    </audio>
+  </div>
+  <div class="divider"></div>
+  <img src="file:///C:/Users/Almeida/Desktop/site/Constitucional/Aula 16/foto_aula16.jpg" alt="Imagem Aula 16">
+</div>
+
+  <!-- ################################----------Aula 7---------- ########################################################### -->
+  <div class="imagem-aula17" id="imagemAula17">
+    <div id="audioToggle17" style="position: fixed; top: 10px; left: 210px; z-index: 9999; background: #111; padding: 6px 10px; border-radius: 6px; color: white; cursor: pointer; font-size: 14px;">🎧 Áudios explicativos</div>
+  <div id="audioList17" style="display: none; position: fixed; top: 50px; left: 270px; z-index: 9999; background: #222; padding: 10px; border-radius: 6px; box-shadow: 0 0 8px rgba(0,0,0,0.3);">
+    
+    <p style="color: #fff; margin: 6px 0 2px;">Aula 00 - Parte 01</p>
+    <audio controls style="display: block; width: 240px; margin-bottom: 10px;">
+      <source src="file:///C:/Users/Almeida/Desktop/site/Constitucional/Aula 17/audio-explicacao.mp3" type="audio/mpeg">
+      Seu navegador não suporta áudio HTML.
+    </audio>
+    
+    <p style="color: #fff; margin: 6px 0 2px;">Aula 00 - Parte 01</p>
+    <audio controls style="display: block; width: 240px;">
+      <source src="file:///C:/Users/Almeida/Desktop/site/Constitucional/Aula 17/audio-explicacao-2.mp3" type="audio/mpeg">
+      Seu navegador não suporta áudio HTML.
+    </audio>
+  </div>
+  <div class="divider"></div>
+  <img src="file:///C:/Users/Almeida/Desktop/site/Constitucional/Aula 17/foto_aula17.jpg" alt="Imagem Aula 17">
+</div>
+
+  <!-- ################################----------Aula 18---------- ########################################################### -->
+  <div class="imagem-aula18" id="imagemAula18">
+    <div id="audioToggle18" style="position: fixed; top: 10px; left: 210px; z-index: 9999; background: #111; padding: 6px 10px; border-radius: 6px; color: white; cursor: pointer; font-size: 14px;">🎧 Áudios explicativos</div>
+  <div id="audioList18" style="display: none; position: fixed; top: 50px; left: 270px; z-index: 9999; background: #222; padding: 10px; border-radius: 6px; box-shadow: 0 0 8px rgba(0,0,0,0.3);">
+    
+    <p style="color: #fff; margin: 6px 0 2px;">Aula 00 - Parte 01</p>
+    <audio controls style="display: block; width: 240px; margin-bottom: 10px;">
+      <source src="file:///C:/Users/Almeida/Desktop/site/Constitucional/Aula 18/audio-explicacao.mp3" type="audio/mpeg">
+      Seu navegador não suporta áudio HTML.
+    </audio>
+   
+    <p style="color: #fff; margin: 6px 0 2px;">Aula 00 - Parte 01</p>
+    <audio controls style="display: block; width: 240px;">
+      <source src="file:///C:/Users/Almeida/Desktop/site/Constitucional/Aula 18/audio-explicacao-2.mp3" type="audio/mpeg">
+      Seu navegador não suporta áudio HTML.
+    </audio>
+  </div>
+  <div class="divider"></div>
+  <img src="file:///C:/Users/Almeida/Desktop/site/Constitucional/Aula 18/foto_aula18.jpg" alt="Imagem Aula 18">
+</div>
+
+  <!-- ################################----------Aula 19---------- ########################################################### -->
+  <div class="imagem-aula19" id="imagemAula19">
+    <div id="audioToggle19" style="position: fixed; top: 10px; left: 210px; z-index: 9999; background: #111; padding: 6px 10px; border-radius: 6px; color: white; cursor: pointer; font-size: 14px;">🎧 Áudios explicativos</div>
+  <div id="audioList19" style="display: none; position: fixed; top: 50px; left: 270px; z-index: 9999; background: #222; padding: 10px; border-radius: 6px; box-shadow: 0 0 8px rgba(0,0,0,0.3);">
+   
+    <p style="color: #fff; margin: 6px 0 2px;">Aula 00 - Parte 01</p>
+    <audio controls style="display: block; width: 240px; margin-bottom: 10px;">
+      <source src="file:///C:/Users/Almeida/Desktop/site/Constitucional/Aula 19/audio-explicacao.mp3" type="audio/mpeg">
+      Seu navegador não suporta áudio HTML.
+    </audio>
+    
+    <p style="color: #fff; margin: 6px 0 2px;">Aula 00 - Parte 01</p>
+    <audio controls style="display: block; width: 240px;">
+      <source src="file:///C:/Users/Almeida/Desktop/site/Constitucional/Aula 19/audio-explicacao-2.mp3" type="audio/mpeg">
+      Seu navegador não suporta áudio HTML.
+    </audio>
+  </div>
+  <div class="divider"></div>
+  <img src="file:///C:/Users/Almeida/Desktop/site/Constitucional/Aula 19/foto_aula19.jpg" alt="Imagem Aula 19">
+</div>
+   
+  <!-- ################################---------- FIM ---------- ################################# -->
+
+
+   <!-- ################################---------- Sistema para rodar audios PARA 19 AULAS ---------- ################################# -->
+<script>
+for (let i = 0; i <= 19; i++) {
+  const toggle = document.getElementById(`audioToggle${i.toString().padStart(2, '0')}`);
+  const list = document.getElementById(`audioList${i.toString().padStart(2, '0')}`);
+  if (toggle && list) {
+    toggle.addEventListener('click', () => {
+      list.style.display = list.style.display === 'none' ? 'block' : 'none';
+    });
+  }
+}
+</script>
+
+  <!-- ################################------ Sistema para rodar audios FIM ---------- ################################# -->
+
+  <script>
+  const aulaLinks = document.querySelectorAll('.aula-link');
+  const imgControls = document.getElementById('imgControls');
+  const todasAsAulas = document.querySelectorAll('[id^="imagemAula"]');
+
+  aulaLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      aulaLinks.forEach(l => l.classList.remove('active'));
+      link.classList.add('active');
+
+      let encontrou = false;
+
+      todasAsAulas.forEach(div => {
+        if (link.innerText.includes(div.id.replace('imagemAula', 'Aula '))) {
+          div.style.display = 'block';
+          encontrou = true;
+        } else {
+          div.style.display = 'none';
+        }
+      });
+
+      imgControls.style.display = encontrou ? 'flex' : 'none';
+    });
+  });
+
+  function resizeImages(factor) {
+    document.querySelectorAll('[id^="imagemAula"] img').forEach(img => {
+      const current = parseFloat(img.style.maxWidth || 600);
+      img.style.maxWidth = (current * factor) + 'px';
+    });
+  }
+
+  function resetImages() {
+    document.querySelectorAll('[id^="imagemAula"] img').forEach(img => {
+      img.style.maxWidth = '600px';
+    });
+  }
+
+
+</script>
+</body>
+</html>
